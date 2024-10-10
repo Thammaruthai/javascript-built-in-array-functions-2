@@ -374,3 +374,15 @@ const bills = [
 ];
 
 // Start coding here
+
+function totalBilling(bills) {
+  //console.log(bills.reduce((acc, cur) => acc + cur.total, 0));
+  return bills.reduce((acc, cur) => acc + cur.total, 0);
+}
+
+function messageBilling(bills) {
+  return "Total bill transaction is " + totalBilling(bills);
+}
+
+//console.log(totalBilling(bills));
+console.log(messageBilling(bills));

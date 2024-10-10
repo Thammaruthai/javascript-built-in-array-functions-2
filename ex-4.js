@@ -374,4 +374,34 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+const totalMembers = listUniqueMemberfrombills(bills);
+console.log(totalMembers);
+
+function listUniqueMemberfrombills(bills) {
+  // console.log(
+  //   bills
+  //     .filter((a) => a.member !== null)
+  //     .reduce((acc, cur) => {
+  //       acc.push(cur["member"]["name"]);
+  //       return acc;
+  //     }, [])
+  //     .reduce((acc, cur) => {
+  //       acc.includes(cur) ? (acc = acc) : acc.push(cur);
+  //       return acc;
+  //     }, []).length
+  // );
+
+  return (
+    "Unique Members Count: " +
+    bills
+      .filter((a) => a.member !== null)
+      .reduce((acc, cur) => {
+        acc.push(cur["member"]["name"]);
+        return acc;
+      }, [])
+      .reduce((acc, cur) => {
+        acc.includes(cur) ? (acc = acc) : acc.push(cur);
+        return acc;
+      }, []).length
+  );
+}

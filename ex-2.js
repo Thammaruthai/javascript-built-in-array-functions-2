@@ -375,4 +375,11 @@ const bills = [
 
 // Start coding here
 
-const newBills;
+const newBills=nonMemberCutOff(bills);
+console.log(newBills);
+
+function nonMemberCutOff(bills) {
+  //console.log(bills.filter((bill)=> bill.member!== null));
+  return bills.filter((bill) => bill.member !== null);    //filter member
+}
+
