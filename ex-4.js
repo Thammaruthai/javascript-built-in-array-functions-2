@@ -373,5 +373,19 @@ const bills = [
   },
 ];
 
-// Start coding here
-const totalMembers;
+function countMembers(bills) {
+  const uniqueMembers = bills.reduce((accumulator, bill) => {
+    if (bill.member !== null) {
+      const memberName = bill.member.name;
+
+      if (!accumulator.includes(memberName)) {
+        accumulator.push(memberName);
+      }
+    }
+    return accumulator;
+  }, []);
+
+  return `Unique Members Count: ${uniqueMembers.length}`;
+}
+
+console.log(countMembers(bills));
